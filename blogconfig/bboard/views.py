@@ -1,5 +1,7 @@
+from contextlib import redirect_stderr
+import re
 from django.views.generic.edit import CreateView
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import BbForm
 from .models import Bb, Rubric
 from django.urls import reverse_lazy
@@ -20,6 +22,22 @@ def index(request):
     rubrics = Rubric.objects.all()
     context = {"bbs":bbs, "rubrics": rubrics}
     return render(request, "bboard/index.html", context)
+
+class PostEditor():
+
+    @staticmethod
+    def post_edit(request, pk):
+        post = Bb.objects.get(id=pk)
+        form = BbForm(instance=post)
+
+        if request.method == 'POST':
+            form = BbForm(request.POST, instance=post)
+            if form.is_valid():
+                form.save()
+                return redirect('index')
+
+        context = {'form': form}
+        return render(request, 'bboard/post_edit.html', context)
 
 def by_rubric(request, rubric_id):
     bbs = Bb.objects.filter(rubric=rubric_id)
