@@ -21,7 +21,7 @@
          <br>
          {% for rubric in rubrics %}
          <a href="{% url 'by_rubric' rubric.pk %}">
-         {{ rubric.name }}</a>
+         #{{ rubric.name }}</a>
          {% endfor %}
       </nav>
       <section>

@@ -1,8 +1,11 @@
 header h1 {
-   font-size: 60pt;
+   font-size: 50pt;
    text-transform: uppercase;
    text-align: center;
-   background: url("bg.jpg") left / auto 200% no-repeat
+   background: url("bg.jpg") left / auto 320% no-repeat
+}
+a.pbutton {
+   color: RGB(215,40,40); 
 }
 nav {
    font-size: 16pt;
@@ -15,4 +18,16 @@ nav a {
 }
 section {
    margin-left: 170px;
+}
+h2.title {
+   font-size: 20pt;
+   text-align: center;
+}
+p.rubric {
+   text-align: center;
+   font-size: 15pt;
+}
+p.content{
+   text-align: center;
+   font-size: 15pt;
 }
