@@ -14,13 +14,13 @@
          <h1>Блог одиночества</h1>
       </header>
       <nav>
-         <a href="{% url 'index' %}">Главная</a>
+         <a href="{% url 'index' %}" class="pbutton">Главная</a>
          <br>
-         <a href="{% url 'add' %}">Добавить пост</a>
-         <br>
+         <a href="{% url 'add' %}" class="pbutton">Добавить пост</a>
+         <br> 
          <br>
          {% for rubric in rubrics %}
-         <a href="{% url 'by_rubric' rubric.pk %}">
+         <a href="{% url 'by_rubric' rubric.pk %}" class="pbutton">
          #{{ rubric.name }}</a>
          {% endfor %}
       </nav>

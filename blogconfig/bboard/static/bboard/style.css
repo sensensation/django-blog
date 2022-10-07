@@ -1,11 +1,15 @@
 header h1 {
+   position: relative;
+   left: 5%;
    font-size: 50pt;
+   color: white;
    text-transform: uppercase;
    text-align: center;
-   background: url("bg.jpg") left / auto 320% no-repeat
+   background: url("dog.jpg") left / auto 100% no-repeat
 }
-a.pbutton {
-   color: RGB(215,40,40); 
+.pbutton {
+   color: white; 
+   font-size: 20pt;
 }
 nav {
    font-size: 16pt;
@@ -23,11 +27,39 @@ h2.title {
    font-size: 20pt;
    text-align: center;
 }
-p.rubric {
-   text-align: center;
-   font-size: 15pt;
+.rubric{
+   position: relative;
 }
-p.content{
-   text-align: center;
+.create_post{
+   position: relative;
+   left: 20%
+}
+html {
+   background-image: url("bg.jpg");
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-attachment: fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+.post_block {
+   border-top-left-radius: 20px;
+   border-top-right-radius: 0;
+   border-bottom-right-radius: 30px;
+   border-bottom-left-radius: 0;
+   background-color: gainsboro;
+   border:2px solid black;
+   margin:20px auto;
+   padding:10px;
+   width:700px;
+   word-break:break-all;
+   
+   border-width: solid;
    font-size: 15pt;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   text-align: center;
 }

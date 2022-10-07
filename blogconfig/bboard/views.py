@@ -1,5 +1,3 @@
-from contextlib import redirect_stderr
-import re
 from django.views.generic.edit import CreateView
 from django.shortcuts import render, redirect
 from .forms import BbForm
@@ -23,8 +21,7 @@ def index(request):
     context = {"bbs":bbs, "rubrics": rubrics}
     return render(request, "bboard/index.html", context)
 
-class PostEditor():
-
+class Post():
     @staticmethod
     def post_edit(request, pk):
         post = Bb.objects.get(id=pk)
@@ -38,6 +35,16 @@ class PostEditor():
 
         context = {'form': form}
         return render(request, 'bboard/post_edit.html', context)
+
+    @staticmethod   
+    def post_delete(request, pk):
+        post = Bb.objects.get(id=pk)
+        
+        if request.method == 'POST':
+            post.delete()
+            return redirect('index')
+        return redirect('index')
+
 
 def by_rubric(request, rubric_id):
     bbs = Bb.objects.filter(rubric=rubric_id)

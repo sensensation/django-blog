@@ -2,11 +2,19 @@
 
 {% block content %}
 {% for bb in bbs %}
-<div>
+<div class="post_block">
    <h2 class="title">{{ bb.title }}</h2>
-   <p class="rubric"><a href="{% url 'by_rubric' bb.rubric.pk %}"> # {{ bb.rubric.name }} </a></p>
-   <p class="content">{{ bb.content }}</p>
-   <p style="text-align:center">{{ bb.published|date:"d.m.Y H:i:s" }} <a href="{% url 'post_edit' bb.id %}" class="pbutton">Редактировать</a></p>
+   <p class="rubric"><a href="{% url 'by_rubric' bb.rubric.pk %}" class="title"> # {{ bb.rubric.name }} </a></p>
+   <p>{{ bb.content }}</p>
+   <p style="text-align:center"> {{ bb.published|date:"d.m.Y" }} <a href="{% url 'post_edit' bb.id %}" class="pbutton">Редактировать</a></p>
+
+   <form method="POST" action="{% url 'post_delete' bb.id %}">
+      {% csrf_token %}
+      <button type="submit" >Удалить запись</button>
+   </form>
+   
+   
+   
 </div>
 {% endfor %}
 {% endblock %}

@@ -5,10 +5,14 @@
 {% block content %}
 <h2>Рубрика: {{ current_rubric.name }}</h2>
 {% for bb in bbs %}
-<div>
+<div class="post_block">
    <h2>{{ bb.title }}</h2>
    <p>{{ bb.content }}</p>
-   <p>{{ bb.published|date:"d.m.Y H:i:s" }} <a href="{% url 'post_edit' bb.id %}">Редактировать</a></p>
+   <p>{{ bb.published|date:"d.m.Y" }} <a href="{% url 'post_edit' bb.id %}" class="pbutton">Редактировать</a></p>
+   <form method="POST" action="{% url 'post_delete' bb.id %}">
+      {% csrf_token %}
+      <button type="submit" >Удалить запись</button>
+   </form>
 </div>
 {% endfor %}
 {% endblock %}
