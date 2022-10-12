@@ -3,12 +3,12 @@
 {% block title %}{{ current_rubric.name }}{% endblock %}
 
 {% block content %}
-<h2>Рубрика: {{ current_rubric.name }}</h2>
+<h2 style="position: relative; left: 43%;">Рубрика: {{ current_rubric.name }}</h2>
 {% for bb in bbs %}
 <div class="post_block">
    <h2>{{ bb.title }}</h2>
    <p>{{ bb.content }}</p>
-   <p>{{ bb.published|date:"d.m.Y" }} <a href="{% url 'post_edit' bb.id %}" class="pbutton">Редактировать</a></p>
+   <p>{{ bb.published|date:"d.m.Y" }} <a href="{% url 'post_edit' bb.id %}" class="redact_button">Редактировать</a></p>
    <form method="POST" action="{% url 'post_delete' bb.id %}">
       {% csrf_token %}
       <button type="submit" >Удалить запись</button>

@@ -3,7 +3,7 @@
 {% block title %} Добавление поста {% endblock %}
 
 {% block content %}
-<h2>Добавление поста</h2>
+<h2 style="position: relative; left: 20%;">Добавление поста</h2>
 <form method="post" class="create_post">
    {% csrf_token %}
    {{ form.as_p }}

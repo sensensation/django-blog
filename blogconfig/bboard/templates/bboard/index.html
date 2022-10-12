@@ -6,7 +6,7 @@
    <h2 class="title">{{ bb.title }}</h2>
    <p class="rubric"><a href="{% url 'by_rubric' bb.rubric.pk %}" class="title"> # {{ bb.rubric.name }} </a></p>
    <p>{{ bb.content }}</p>
-   <p style="text-align:center"> {{ bb.published|date:"d.m.Y" }} <a href="{% url 'post_edit' bb.id %}" class="pbutton">Редактировать</a></p>
+   <p style="text-align:center"> {{ bb.published|date:"d.m.Y" }} <a href="{% url 'post_edit' bb.id %}" class="redact_button">Редактировать</a></p>
 
    <form method="POST" action="{% url 'post_delete' bb.id %}">
       {% csrf_token %}

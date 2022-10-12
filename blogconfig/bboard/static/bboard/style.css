@@ -9,6 +9,10 @@ header h1 {
 }
 .pbutton {
    color: black; 
+   font-size: 30pt;
+}
+.redact_button{
+   color: black; 
    font-size: 20pt;
 }
 nav {
