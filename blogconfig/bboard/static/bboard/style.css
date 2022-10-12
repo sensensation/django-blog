@@ -2,13 +2,13 @@ header h1 {
    position: relative;
    left: 5%;
    font-size: 50pt;
-   color: white;
+   color: black;
    text-transform: uppercase;
    text-align: center;
-   background: url("dog.jpg") left / auto 100% no-repeat
+   background: url("logo.png") left / auto 100% no-repeat;
 }
 .pbutton {
-   color: white; 
+   color: black; 
    font-size: 20pt;
 }
 nav {
@@ -35,7 +35,7 @@ h2.title {
    left: 20%
 }
 html {
-   background-image: url("bg.jpg");
+   background-image: url("bg2.jpg");
    background-repeat: no-repeat;
    background-position: center center;
    background-attachment: fixed;
