@@ -20,4 +20,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("bboard/", include('bboard.urls')),
     path("accounts/", include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
+    
 ]

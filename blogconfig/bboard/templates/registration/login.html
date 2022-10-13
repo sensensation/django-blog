@@ -7,5 +7,6 @@
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Авторизоваться</button>
+  <p style="font-size: 18pt;  color: black;">Новый пользователь? <a href="{% url 'signup' %}" style="font-size: 18pt;  color: black;">Зарегистрироваться</a></p>
 </form>
 {% endblock content %}
