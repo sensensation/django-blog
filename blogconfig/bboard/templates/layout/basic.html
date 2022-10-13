@@ -12,6 +12,12 @@
    <body>
       <header>
          <h1>Блог одиночества</h1>
+         {% if user.is_authenticated %}
+         <p><a href="{% url 'logout' %}" style="font-size: 18pt;  color: black;">Выйти</a></p>
+         {% else %}
+         <p style="font-size: 18pt;  color: black;">Вы не авторизованы. <a href="{% url 'login' %}" style="font-size: 18pt;  color: black;">Авторизоваться</a></p>
+         
+         {% endif %}
       </header>
       <nav>
          <a href="{% url 'index' %}" class="pbutton">Главная</a>
