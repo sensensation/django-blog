@@ -19,6 +19,7 @@ class BbCreateView(LoginRequiredMixin, CreateView):
     template_name = 'bboard/create.html'
     form_class = BbForm
     success_url = reverse_lazy('index')
+    
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -44,6 +45,7 @@ class Post():
     @staticmethod
     def post_edit(request, pk):
         post = Bb.objects.get(id=pk)
+        # print(post.image)
         form = BbForm(instance=post)
 
         if request.method == 'POST':
@@ -54,7 +56,7 @@ class Post():
 
         context = {'form': form}
         return render(request, 'bboard/post_edit.html', context)
-        
+
     @login_required(login_url='login')
     @staticmethod   
     def post_delete(request, pk):

@@ -3,8 +3,8 @@
 {% block title %} Редактирование поста {% endblock %}
 
 {% block content %}
-<h2>Редактировать пост</h2>
-<form method="post" action="">
+<h2 style="position: relative; left: 20%;">Редактировать пост</h2>
+<form method="post" class="create_post" enctype="multipart/form-data">
    {% csrf_token %}
    {{ form.as_p }}
    <input type="submit" value="Обновить">
