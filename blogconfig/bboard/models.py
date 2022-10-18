@@ -6,11 +6,8 @@ class Bb(models.Model):
     title = models.CharField(max_length=50, verbose_name="Заголовок")
     content = models.TextField(null=True, blank=True, verbose_name="Описание")
     published = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name="Опубликовано")
-    image = models.ImageField(upload_to='media', null=True, blank=True, verbose_name="Картинка") 
-    
-    rubric = models.ForeignKey(
-        "Rubric", null=True, on_delete=models.PROTECT, verbose_name="Рубрика"
-    )
+    image = models.ImageField(upload_to='images', null=True, blank=True, verbose_name="Картинка") 
+    rubric = models.ForeignKey("Rubric", null=True, on_delete=models.PROTECT, verbose_name="Рубрика")
 
     class Meta:
         verbose_name_plural = "Посты"

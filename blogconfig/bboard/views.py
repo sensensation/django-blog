@@ -1,6 +1,3 @@
-from cmath import log
-import imp
-from re import L
 from django.views.generic.edit import CreateView
 from django.shortcuts import render, redirect
 from .forms import BbForm
@@ -8,6 +5,8 @@ from .models import Bb, Rubric
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+import os
+
 
 #класс-контроллер
 
@@ -45,15 +44,19 @@ class Post():
     @staticmethod
     def post_edit(request, pk):
         post = Bb.objects.get(id=pk)
-        # print(post.image)
         form = BbForm(instance=post)
-
         if request.method == 'POST':
+            if len(request.FILES) != 0:
+                if len(post.image) > 0:
+                    os.remove(post.image.path)
+                post.image = request.FILES['image']
+            if post.image == "":
+                os.remove(post.image.path)
             form = BbForm(request.POST, instance=post)
+            print(post.image.path)
             if form.is_valid():
                 form.save()
                 return redirect('index')
-
         context = {'form': form}
         return render(request, 'bboard/post_edit.html', context)
 
