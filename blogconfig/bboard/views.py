@@ -1,15 +1,25 @@
+from cmath import log
+import imp
+from re import L
 from django.views.generic.edit import CreateView
 from django.shortcuts import render, redirect
 from .forms import BbForm
 from .models import Bb, Rubric
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 #класс-контроллер
-class BbCreateView(CreateView):
+
+class BbCreateView(LoginRequiredMixin, CreateView):
+
+    login_url = "login"
+    redirect_field_name = "index"
+    
     template_name = 'bboard/create.html'
     form_class = BbForm
     success_url = reverse_lazy('index')
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['rubrics'] = Rubric.objects.all()
@@ -22,6 +32,7 @@ def by_rubric(request, rubric_id):
     context = {"bbs": bbs, "rubrics": rubrics, "current_rubric": current_rubric}
     return render(request, "bboard/by_rubric.html", context)
 
+
 def index(request):
     bbs = Bb.objects.all()
     rubrics = Rubric.objects.all()
@@ -29,6 +40,7 @@ def index(request):
     return render(request, "bboard/index.html", context)
 
 class Post():
+    @login_required(login_url='login')
     @staticmethod
     def post_edit(request, pk):
         post = Bb.objects.get(id=pk)
@@ -42,7 +54,8 @@ class Post():
 
         context = {'form': form}
         return render(request, 'bboard/post_edit.html', context)
-
+        
+    @login_required(login_url='login')
     @staticmethod   
     def post_delete(request, pk):
         post = Bb.objects.get(id=pk)

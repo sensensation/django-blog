@@ -1,6 +1,6 @@
 header h1 {
    position: relative;
-   left: 5%;
+   left: 7%;
    font-size: 50pt;
    color: black;
    text-transform: uppercase;
@@ -10,6 +10,7 @@ header h1 {
 .pbutton {
    color: black; 
    font-size: 30pt;
+   background-color: None ;
 }
 .redact_button{
    color: black; 
@@ -17,7 +18,7 @@ header h1 {
 }
 nav {
    font-size: 16pt;
-   width: 150px;
+   width: 250px;
    float: left;
 }
 nav a {
@@ -57,7 +58,7 @@ html {
    border:2px solid black;
    margin:20px auto;
    padding:10px;
-   width:700px;
+   width:800px;
    word-break:break-all;
    
    border-width: solid;
