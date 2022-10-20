@@ -1,7 +1,5 @@
 .head_title{
-   position: relative;
-   left:5.5%;
-   font-size: 50pt;
+   font-size: 40pt;
    color: black;
    text-transform: uppercase;
    text-align: center;
@@ -64,6 +62,8 @@ html {
    width:690px;
    word-wrap: break-word;
    box-shadow: 0 15px 20px rgba(50, 59, 55, 0.4);
+   position: relative;
+   right: 5%;
    
    border-width: solid;
    display: flexbox;
@@ -81,7 +81,7 @@ html {
    height: auto;
    border-radius: 8px;
 }
-/* tests */
+/* buttons */
 .floating-button {
    text-decoration: none;
    display: inline-block;
@@ -99,7 +99,8 @@ html {
    color: #524f4e;
    background: white;
    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
-   transition: .3s;
+   transition: .2s;
+   border-color: whitesmoke;
  }
  .floating-button:hover {
    background: #F08080;
@@ -108,13 +109,25 @@ html {
    transform: translateY(-7px);
  }
  .post_button {
-   color: #524f4e;
-   background: white;;
-   cursor: pointer;
-   margin: 10px;
+   text-decoration: none;
+   display: inline-block;
+   width: auto;
+   height: 27px;
+   line-height: 27px;
+   border-radius: 25px;
+   margin: 6px 30px;
+   border-color: white;
    font-family: 'Montserrat', sans-serif;
-   font-size: 14px;
+   font-size: 9px;
+   text-transform: uppercase;
+   text-align: center;
+   letter-spacing: 1px;
+   font-weight: 400;
+   color: #524f4e;
+   background: whitesmoke;
+   box-shadow: 15px 15px 15px rgba(0, 0, 0, .1);
    transition: .3s;
+   padding: 0 10px;
  }
  .post_button:hover {
    background: #F08080;
@@ -122,54 +135,63 @@ html {
    color: white;
    transform: translateY(-2px);
  }
- /* reg button */
- .animated-button {
+ .login_button {
    text-decoration: none;
    display: inline-block;
-   margin: 10px 20px;
-   padding: 15px 30px;
-   overflow: hidden;
-   border: 2px solid;
-   border-bottom-width: 4px;
+   width: auto;
+   height: 45px;
+   line-height: 45px;
+   border-radius: 25px;
+   margin: 10px 30px;
+   border-color: white;
    font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
    text-transform: uppercase;
-   font-weight: bold;
+   text-align: center;
    letter-spacing: 2px;
-   color: black
-   background: rgba(255, 255, 255, 1);
-   transition: color .3s, background .5s;
+   font-weight: 600;
+   color: #524f4e;
+   background: whitesmoke;
+   box-shadow: 15px 15px 15px rgba(0, 0, 0, .1);
+   transition: .3s;
+   padding: 0 10px;
  }
- .animated-button:hover {
-   animation: stripes .75s infinite linear;
-   background: linear-gradient(45deg, black 25%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 50%,black 50%, black 75%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1));
-   background-size: 10px 10px;
-   color:#F08080;
+ .login_button:hover {
+   background: #F08080;
+   box-shadow: 0 15px 20px rgba(50, 59, 55, 0.4);
+   color: white;
+   transform: translateY(-2px);
  }
- @keyframes stripes {
-   0% {
-     background-position: 0 0;
-   }
-   100% {
-     background-position: 50px 0;
-   }
- }
+
  /* login page background */
  .rgb {
-   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-   background-size: 400% 400%;
-   animation: gradient 15s ease infinite;
-   width: 100%;
-   height:100%;
- }
- @keyframes gradient {
-   0% {
-       background-position: 0% 50%;
-   }
-   50% {
-       background-position: 100% 50%;
-   }
-   100% {
-       background-position: 0% 50%;
-   }
+	background: linear-gradient(-45deg,#ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 200% 200%;
+	animation: gradient 6s ease infinite;
 }
-/* clouds */
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.login_box {
+   overflow: hidden;
+   background-color: white;
+   padding: 10px;
+   border-top-left-radius: 30px;
+   border-top-right-radius: 30px;
+   border-bottom-right-radius: 30px;
+   border-bottom-left-radius: 30px;
+   background-color: whitesmoke;
+   border:2px solid lightgray;
+   margin:0px auto;
+   padding: 1em;
+   width:450px;
+   box-shadow: 15px 15px 15px rgba(0, 0, 0, .1);
+}

@@ -6,18 +6,12 @@
     <title>Django blog</title>
     <link rel="stylesheet" type="text/css"
       href="{% static 'bboard/style.css' %}">
-    <link href="{% static 'css/base.css' %}" rel="stylesheet">
   </head>
   <body>
    <header>
       <h1 class="head_title">Блог одиночества</h1>
    </header>
-    <div>
-      {% if user.is_authenticated %}
-        <p style="font-size: 20pt; text-align: center;">Привет, {{ user.username }}!</p>
-      {% else %}
-        <p style="font-size: 20pt;  color: black; position: relative; left: 42%">Вы не авторизованы.</p>
-      {% endif %}
+    <div style="display: space-between; font-size: 14px; font-family: Montserrat, sans-serif; color: black">
     {% block content %}
     {% endblock content %}
     </div>
