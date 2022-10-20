@@ -4,18 +4,30 @@
 {% for bb in bbs %}
 <div class="post_block">
    <h2 class="title">{{ bb.title }}</h2>
-   <p class="rubric"><a href="{% url 'by_rubric' bb.rubric.pk %}" class="title"> # {{ bb.rubric.name }} </a></p>
+   <p class="rubric"><a href="{% url 'by_rubric' bb.rubric.pk %}"> # {{ bb.rubric.name }} </a></p>
    <p>{{ bb.content }}</p>
-   <p style="text-align:center"> {{ bb.published|date:"d.m.Y" }} <a href="{% url 'post_edit' bb.id %}" class="redact_button">Редактировать</a></p>
-
+   
    {% if bb.image %} 
    <img src="{{ bb.image.url }}"  class="picture"> 
    {% endif %} 
-
-   <form method="POST" action="{% url 'post_delete' bb.id %}">
-      {% csrf_token %}
-      <button type="submit">Удалить запись</button>
-   </form>
+   <p style="text-align:center; font-size: 14px; font-family: Montserrat, sans-serif"> Дата публикации: {{ bb.published|date:"d.m.Y" }}
+   <div style="float: left;  margin: -45px 100px;">
+      <form method="POST" action="{% url 'post_delete' bb.id %}">
+         {% csrf_token %}
+         <button type="submit" class="post_button">Удалить запись</button>
+      </form>
+   </div>
+   <div style="float: right;
+   margin: -45px 100px;">
+      <form method="POST" action="{% url 'post_edit' bb.id %}">
+         {% csrf_token %}
+         <button type="submit" class="post_button">Редактировать</button>
+      </form>
+   </div>
 </div>
 {% endfor %}
 {% endblock %}
+
+<!-- <a href="{% url 'post_edit' bb.id %}" class="delete_button">Редактировать</a> -->
+<!-- <a href="{% url 'by_rubric' bb.rubric.pk %}"> # {{ bb.rubric.name }} </a> -->
+

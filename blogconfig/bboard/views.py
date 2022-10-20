@@ -50,10 +50,7 @@ class Post():
                 if len(post.image) > 0:
                     os.remove(post.image.path)
                 post.image = request.FILES['image']
-            if post.image == "":
-                os.remove(post.image.path)
             form = BbForm(request.POST, instance=post)
-            print(post.image.path)
             if form.is_valid():
                 form.save()
                 return redirect('index')

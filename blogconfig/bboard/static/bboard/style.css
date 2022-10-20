@@ -1,24 +1,20 @@
 header h1 {
    position: relative;
-   left: 7%;
+   left:5.5%;
    font-size: 50pt;
    color: black;
    text-transform: uppercase;
    text-align: center;
-   background: url("logo.png") left / auto 100% no-repeat;
-}
-.pbutton {
-   color: black; 
-   font-size: 30pt;
-   background-color: None ;
+   font-family: 'Montserrat', sans-serif;
+   text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 .redact_button{
    color: black; 
-   font-size: 20pt;
+   font-size: 14pt;
 }
 nav {
    font-size: 16pt;
-   width: 250px;
+   width: 270px;
    float: left;
 }
 nav a {
@@ -34,13 +30,18 @@ h2.title {
 }
 .rubric{
    position: relative;
+   color: gray;
+   cursor: pointer;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
+   text-align: center;
 }
 .create_post{
    position: relative;
    left: 20%
 }
 html {
-   background-image: url("bg2.jpg");
+   background-image: url("bg4.jpg");
    background-repeat: no-repeat;
    background-position: center center;
    background-attachment: fixed;
@@ -50,23 +51,25 @@ html {
    background-size: cover;
  }
 .post_block {
-   border-top-left-radius: 20px;
-   border-top-right-radius: 0;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 16px;
+   border-top-left-radius: 30px;
+   border-top-right-radius: 30px;
    border-bottom-right-radius: 30px;
-   border-bottom-left-radius: 0;
-   background-color: lightcyan;
-   border:2px solid black;
+   border-bottom-left-radius: 30px;
+   background-color: whitesmoke;
+   border:2px solid lightgray;
    margin:20px auto;
    padding:10px;
-   width:700px;
-   word-break:break-all;
+   width:690px;
+   word-wrap: break-word;
+   box-shadow: 0 15px 20px rgba(50, 59, 55, 0.4);
    
    border-width: solid;
-   font-size: 15pt;
    display: flexbox;
    justify-content: center;
    flex-direction: column;
-   text-align: center;
+   text-align: justify;
 }
 .picture {
    display: block;
@@ -76,3 +79,44 @@ html {
    height: auto;
    border-radius: 8px;
 }
+/* tests */
+.floating-button {
+   text-decoration: none;
+   display: inline-block;
+   width: 240px;
+   height: 45px;
+   line-height: 45px;
+   border-radius: 45px;
+   margin: 10px 30px;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
+   text-transform: uppercase;
+   text-align: center;
+   letter-spacing: 3px;
+   font-weight: 600;
+   color: #524f4e;
+   background: white;
+   box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+   transition: .3s;
+ }
+ .floating-button:hover {
+   background: #808080;
+   box-shadow: 0 15px 20px rgba(50, 59, 55, 0.4);
+   color: white;
+   transform: translateY(-7px);
+ }
+ .post_button {
+   color: #524f4e;
+   background: white;;
+   cursor: pointer;
+   margin: 10px;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
+   transition: .3s;
+ }
+ .post_button:hover {
+   background: #808080;
+   box-shadow: 0 15px 20px rgba(50, 59, 55, 0.4);
+   color: white;
+   transform: translateY(-2px);
+ }
