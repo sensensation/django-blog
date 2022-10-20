@@ -9,12 +9,12 @@
    <p style="text-align:center"> {{ bb.published|date:"d.m.Y" }} <a href="{% url 'post_edit' bb.id %}" class="redact_button">Редактировать</a></p>
 
    {% if bb.image %} 
-   <img src="{{ bb.image.url }}" alt="" class="picture"> 
+   <img src="{{ bb.image.url }}"  class="picture"> 
    {% endif %} 
 
    <form method="POST" action="{% url 'post_delete' bb.id %}">
       {% csrf_token %}
-      <button type="submit" >Удалить запись</button>
+      <button type="submit">Удалить запись</button>
    </form>
 </div>
 {% endfor %}
