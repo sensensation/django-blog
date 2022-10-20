@@ -4,9 +4,8 @@
 {% for bb in bbs %}
 <div class="post_block">
    <h2 class="title">{{ bb.title }}</h2>
-   <p class="rubric"><a href="{% url 'by_rubric' bb.rubric.pk %}"> # {{ bb.rubric.name }} </a></p>
+   <p class="rubric">Тема:<a href="{% url 'by_rubric' bb.rubric.pk %}" class="post_button">  {{ bb.rubric.name }} </a></p>
    <p>{{ bb.content }}</p>
-   
    {% if bb.image %} 
    <img src="{{ bb.image.url }}"  class="picture"> 
    {% endif %} 
@@ -15,8 +14,8 @@
       <form method="POST" action="{% url 'post_delete' bb.id %}">
          {% csrf_token %}
          <button type="submit" class="post_button">Удалить запись</button>
-      </form>
-   </div>
+      </form> 
+  </div>
    <div style="float: right;
    margin: -45px 100px;">
       <form method="POST" action="{% url 'post_edit' bb.id %}">

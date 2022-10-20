@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
+<html class="rgb">
   <head>
     <title>Django blog</title>
     <link rel="stylesheet" type="text/css"
@@ -10,14 +10,13 @@
   </head>
   <body>
    <header>
-      <h1>Блог одиночества</h1>
+      <h1 class="head_title">Блог одиночества</h1>
    </header>
     <div>
       {% if user.is_authenticated %}
         <p style="font-size: 20pt; text-align: center;">Привет, {{ user.username }}!</p>
       {% else %}
         <p style="font-size: 20pt;  color: black; position: relative; left: 42%">Вы не авторизованы.</p>
-        <!-- <a href="{% url 'login' %}" style="font-size: 18pt;  color: black;">Авторизоваться</a> -->
       {% endif %}
     {% block content %}
     {% endblock content %}
