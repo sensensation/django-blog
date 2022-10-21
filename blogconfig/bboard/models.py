@@ -6,7 +6,7 @@ class Bb(models.Model):
     title = models.CharField(max_length=50, verbose_name="Заголовок")
     content = models.TextField(null=True, blank=True, verbose_name="Описание")
     published = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name="Опубликовано")
-    image = models.ImageField(upload_to='images', null=True, blank=True, verbose_name="Картинка", default='images/default_pic.jpg') 
+    image = models.ImageField(upload_to='images', null=True, blank=False, verbose_name="Картинка", default='images/default_pic.jpg') 
     rubric = models.ForeignKey("Rubric", null=True, on_delete=models.PROTECT, verbose_name="Рубрика")
 
     class Meta:

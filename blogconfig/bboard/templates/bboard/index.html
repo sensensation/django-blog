@@ -11,17 +11,11 @@
    {% endif %} 
    <p style="text-align:center; font-size: 14px; font-family: Montserrat, sans-serif; color: gray"> {{ bb.published|date:"d.m.Y" }}
    <div style="float: left;  margin: -44px 75px;">
-      <form method="POST" action="{% url 'post_delete' bb.id %}">
-         {% csrf_token %}
-         <button type="submit" class="post_button">Удалить запись</button>
-      </form> 
+      <a href="{% url 'post_delete' bb.id %}" class="post_button">Удалить запись</a>
   </div>
    <div style="float: right;
    margin: -44px 75px;">
-      <form method="POST" action="{% url 'post_edit' bb.id %}">
-         {% csrf_token %}
-         <button type="submit" class="post_button">Редактировать</button>
-      </form>
+      <a href="{% url 'post_edit' bb.id %}" class="post_button">Редактировать</a>
    </div>
 </div>
 {% endfor %}
@@ -34,3 +28,8 @@
    {% csrf_token %}
    <button type="submit" class="post_button">Редактировать</button>
 </form> -->
+
+<!-- <form method="POST" action="{% url 'post_delete' bb.id %}">
+   {% csrf_token %}
+   <button type="submit" class="post_button">Удалить запись</button>
+</form>  -->
