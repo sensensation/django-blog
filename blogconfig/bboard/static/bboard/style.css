@@ -25,6 +25,7 @@ section {
 h2.title {
    font-size: 20pt;
    text-align: center;
+   font-family: 'Montserrat', sans-serif;
 }
 .rubric{
    position: relative;
@@ -136,6 +137,8 @@ html {
    transform: translateY(-2px);
  }
  .login_button {
+   border: none;
+   border: 1px solid whitesmoke;
    text-decoration: none;
    display: inline-block;
    width: auto;
@@ -166,8 +169,9 @@ html {
  /* login page background */
  .rgb {
 	background: linear-gradient(-45deg,#ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 200% 200%;
+	background-size: 500% 300%;
 	animation: gradient 6s ease infinite;
+   
 }
 @keyframes gradient {
 	0% {

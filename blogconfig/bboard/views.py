@@ -8,22 +8,23 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import os
 
 
-#класс-контроллер
+# класс-контроллер
+
 
 class BbCreateView(LoginRequiredMixin, CreateView):
 
     login_url = "login"
     redirect_field_name = "index"
-    
-    template_name = 'bboard/create.html'
+
+    template_name = "bboard/create.html"
     form_class = BbForm
-    success_url = reverse_lazy('index')
-    
+    success_url = reverse_lazy("index")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['rubrics'] = Rubric.objects.all()
+        context["rubrics"] = Rubric.objects.all()
         return context
+
 
 def by_rubric(request, rubric_id):
     bbs = Bb.objects.filter(rubric=rubric_id)
@@ -36,37 +37,34 @@ def by_rubric(request, rubric_id):
 def index(request):
     bbs = Bb.objects.all()
     rubrics = Rubric.objects.all()
-    context = {"bbs":bbs, "rubrics": rubrics}
+    context = {"bbs": bbs, "rubrics": rubrics}
     return render(request, "bboard/index.html", context)
 
-class Post():
-    @login_required(login_url='login')
+
+class Post:
+    @login_required(login_url="login")
     @staticmethod
     def post_edit(request, pk):
         post = Bb.objects.get(id=pk)
         form = BbForm(instance=post)
-        if request.method == 'POST':
+        if request.method == "POST":
             if len(request.FILES) != 0:
                 if len(post.image) > 0:
                     os.remove(post.image.path)
-                post.image = request.FILES['image']
+                post.image = request.FILES["image"]
             form = BbForm(request.POST, instance=post)
             if form.is_valid():
                 form.save()
-                return redirect('index')
-        context = {'form': form}
-        return render(request, 'bboard/post_edit.html', context)
+                return redirect("index")
+        context = {"form": form}
+        return render(request, "bboard/post_edit.html", context)
 
-    @login_required(login_url='login')
-    @staticmethod   
+    @login_required(login_url="login")
+    @staticmethod
     def post_delete(request, pk):
         post = Bb.objects.get(id=pk)
-        
-        if request.method == 'POST':
+
+        if request.method == "POST":
             post.delete()
-            return redirect('index')
-        return redirect('index')
-
-
-
-
+            return redirect("index")
+        return redirect("index")
