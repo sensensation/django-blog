@@ -3,7 +3,9 @@
 {% block title %}{{ current_rubric.name }}{% endblock %}
 
 {% block content %}
-<h2 style="font-family: 'Montserrat', sans-serif; position: relative; left: 27%">Рубрика: {{ current_rubric.name }}</h2>
+<div>
+   <h2 class="rubric_title">Рубрика: {{ current_rubric.name }}</h2>
+</div>
 {% for bb in bbs %}
 <div class="post_block">
    <h2 class="title">{{ bb.title }}</h2>

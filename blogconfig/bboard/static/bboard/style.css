@@ -35,6 +35,29 @@ h2.title {
    font-size: 14px;
    text-align: center;
 }
+.rubric_title {
+   font-family: 'Montserrat', sans-serif; 
+   position: relative; 
+   left: 29%;
+   text-decoration: none;
+   display: inline-block;
+   width: 240px;
+   height: 45px;
+   line-height: 45px;
+   border-radius: 45px;
+   margin: 10px 30px;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
+   text-transform: uppercase;
+   text-align: center;
+   letter-spacing: 3px;
+   font-weight: 600;
+   color: #524f4e;
+   background: white;
+   box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+   transition: .2s;
+   border-color: whitesmoke;
+}
 .create_post{
    position: relative;
    left: 20%
