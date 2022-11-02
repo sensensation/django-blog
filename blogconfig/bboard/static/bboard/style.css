@@ -58,9 +58,22 @@ h2.title {
    transition: .2s;
    border-color: whitesmoke;
 }
-.create_post{
+.create_post_box{
    position: relative;
-   left: 20%
+   overflow: hidden;
+   background-color: white;
+   border-top-left-radius: 30px;
+   border-top-right-radius: 30px;
+   border-bottom-right-radius: 30px;
+   border-bottom-left-radius: 30px;
+   background-color: whitesmoke;
+   border:2px solid lightgray;
+   margin:10px auto;
+   padding: 2em;
+   width:600px;
+   box-shadow: 15px 15px 15px rgba(0, 0, 0, .1);
+   font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
 }
 html {
    background-image: url("bg4.jpg");
