@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 import os
+from django.http import HttpResponseRedirect
 
 
 # класс-контроллер
@@ -62,9 +63,15 @@ class Post:
     @login_required(login_url="login")
     @staticmethod
     def post_delete(request, pk):
-        post = Bb.objects.get(id=pk)
+         post_to_delete=Bb.objects.get(id=pk)
+         post_to_delete.delete()
+         url = reverse_lazy('index')
+         return HttpResponseRedirect(url)
 
-        if request.method == "POST":
-            post.delete()
-            return redirect("index")
-        return redirect("index")
+          # post = Bb.objects.get(id=pk)
+        # print(Bb.objects.get(id=pk))
+        # if request.method == "POST":
+        #     post.delete()
+        #     return redirect("index")
+        # return redirect("index")
+       
