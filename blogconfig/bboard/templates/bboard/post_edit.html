@@ -3,10 +3,12 @@
 {% block title %} Редактирование поста {% endblock %}
 
 {% block content %}
-<h2 style="position: relative; left: 20%;">Редактировать пост</h2>
-<form method="post" class="create_post" enctype="multipart/form-data">
-   {% csrf_token %}
-   {{ form.as_p }}
-   <button type="submit" style="position: relative; left: 20%">Обновить</button>
-</form>
+<div style="margin:100px;">
+   <h2 class="title">Редактировать пост</h2>
+   <form method="post" class="create_post_box" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" style="position: relative; left: 80%">Обновить</button>
+   </form>
+</div>
 {% endblock %}
