@@ -11,7 +11,10 @@
    {% endif %} 
    <p style="text-align:center; font-size: 14px; font-family: Montserrat, sans-serif; color: gray"> {{ bb.published|date:"d.m.Y" }}
    <div style="float: left;  margin: -44px 75px;">
-      <a href="{% url 'post_delete' bb.id %}" class="post_button">Удалить запись</a>
+      <form method="POST" action="{% url 'post_delete' bb.id %}">
+         {% csrf_token %}
+         <button type="submit" class="post_button" style="border: none;">Удалить запись</button>
+      </form>
   </div>
    <div style="float: right;
    margin: -44px 75px;">
