@@ -11,8 +11,11 @@
     <div style="text-align: center;">
       {% csrf_token %}
       {{ form.as_p }}
-      <button type="submit" class="login_button">Авторизоваться</button>
+      <br>
+      <button type="submit" class="login_button" style="border:none;">Авторизоваться</button>
       <!-- <a href="{% url 'login' %}" class="login_button">Авторизоваться</a> -->
+      <br>
+      <br>
       <br>
       <p style="font-size: 12pt;  color: gray;">Новый пользователь? <a href="{% url 'signup' %}" style="font-size: 12pt;  color: gray">Зарегистрироваться</a></p>
     </div>

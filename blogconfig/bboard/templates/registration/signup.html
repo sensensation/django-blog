@@ -1,13 +1,20 @@
 {% extends 'layout/logbase.html' %}
  
 {% block content %}
-<h2 style="position: relative; left: 19%; font-size: 30pt;">Регистрация</h2>
-<form method="post" style="position: relative; left: 19%; font-size: 18pt;">
+<h2 class="title" style="font-size: 20pt">Регистрация</h2>
+<div class="signup_box">
+  <form method="post" style="font-size: 14pt;">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit" class="floating-button">Зарегистрироваться</button>
-  <p style="font-size: 18pt;  color: black;">Уже есть аккаунт? <a href="{% url 'login' %}" style="font-size: 18pt;  color: black;">Авторизоваться</a></p>
+  <button type="submit" class="floating-button" style="border: none; position: relative; left: 25%;">
+    Зарегистрироваться</button>
+    <div style="float: left;  margin: 10px 50px; position: relative; left: 15%">
+      <p  style="font-size: 14pt;  color: gray;">Уже есть аккаунт? <a class="signup_button" href="{% url 'login' %}" >Авторизоваться</a></p>
+    </div>
+  </form>
+</div>
+
   
   
-</form>
+
 {% endblock content %}
