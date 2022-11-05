@@ -15,7 +15,7 @@
       </header>
       <nav>
          {% if user.is_authenticated %}
-         <p style="font-size: 12pt;  color: black; margin-left: 56px;font-family: Montserrat, sans-serif">
+         <p style="font-size: 12pt;  color: gray; margin-left: 56px;font-family: Montserrat, sans-serif">
             Добро пожаловать, {{ user.username }}!</p>
          <p><a href="{% url 'logout' %}" class="floating-button">Выйти</a></p>
          {% else %}
