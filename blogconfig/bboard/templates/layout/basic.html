@@ -11,26 +11,41 @@
    </head>
    <body>
       <header>
-         <h1 class="head_title">Блог одиночества</h1>
+         <h1 class="head_title" style="text-align:center;">Блог одиночества</h1>
+         
+         <div style="position:relative;left:50%;right:0">
+            <div style="position:relative;left:120px;right:0">
+               <!-- bebra -->
+            </div>
+         <div>
       </header>
       <nav>
          {% if user.is_authenticated %}
          <p style="font-size: 12pt;  color: gray; margin-left: 56px;font-family: Montserrat, sans-serif">
             Добро пожаловать, {{ user.username }}!</p>
-         <p><a href="{% url 'logout' %}" class="floating-button">Выйти</a></p>
-         {% else %}
-         <p style="font-size: 12pt;  color: black; margin-left: 56px;font-family: Montserrat, sans-serif">
-            Вы не авторизованы.</p> 
-         <p><a href="{% url 'login' %}" class="floating-button">Авторизоваться</a></p>
-         {% endif %}
-         <a href="{% url 'index' %}" class="floating-button">Главная</a>
-         <a href="{% url 'add' %}" class="floating-button">Добавить пост</a>
-         <br>
-         <br>
-         {% for rubric in rubrics %}
-         <a href="{% url 'by_rubric' rubric.pk %}" class="floating-button">
-         #{{ rubric.name }}</a>
-         {% endfor %}
+         <div style="top:-120px;">
+            <div>
+               <a href="{% url 'logout' %}" class="floating-button">Выйти</a>
+               {% else %}
+               <p style="font-size: 12pt;  color: gray; margin-left: 56px;font-family: Montserrat, sans-serif">
+               Вы не авторизованы.</p> 
+               <p><a href="{% url 'login' %}" class="floating-button">Авторизоваться</a></p>
+               {% endif %}
+            </div>
+         </div>
+            <a href="{% url 'index' %}" class="floating-button">Главная</a>
+            <a href="{% url 'index' %}" class="floating-button">Личный кабинет</a>
+         <div style="position:relative;left:395%;right:0;top:-270px;">
+            <div style="position:relative;left:120px;right:0;">
+               <h2 class="title" style="position:relative; left: 5%;">Рубрики</h2>
+               {% for rubric in rubrics %}
+               <a href="{% url 'by_rubric' rubric.pk %}" class="floating-button">
+               #{{ rubric.name }}</a>
+               <br>
+               {% endfor %}
+               <a href="{% url 'add' %}" class="floating-button">Добавить пост</a>
+            </div>
+         </div>
       </nav>
       <section>
          {% block content %}
