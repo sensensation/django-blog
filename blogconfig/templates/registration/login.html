@@ -1,0 +1,27 @@
+{% extends "layout/logbase.html" %} 
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'registration/login_page.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="auth_page">
+        <div class="auth_page_inner">
+            <div class="auth_title">
+                Войти на сайт
+            </div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type='submit' class="auth_button">Авторизоваться</button>
+            </form>
+            <div class="account">
+              <div style="float: left; margin: -2px 98px;">
+                Новый пользователь?<a class="auth_tiny_button" href="{% url 'signup' %}">Зарегистрироваться</a>
+              </div>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
+  

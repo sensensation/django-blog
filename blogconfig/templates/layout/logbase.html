@@ -6,12 +6,14 @@
     <title>Django blog</title>
     <link rel="stylesheet" type="text/css"
       href="{% static 'bboard/style.css' %}">
+      {% block css %}
+      {% endblock %}
   </head>
   <body>
    <header>
       <h1 class="head_title">Блог одиночества</h1>
    </header>
-    <div style="display: space-between; font-size: 14px; font-family: Montserrat, sans-serif; color: black">
+    <div>
     {% block content %}
     {% endblock content %}
     </div>
