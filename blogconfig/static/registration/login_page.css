@@ -1,6 +1,6 @@
 /* auth box */
  .auth_page{
-   height: 100vh;
+   height: 30vw;
    width: 100vw;
 
    display: flex;
@@ -46,7 +46,7 @@
    padding: 0 .5rem;
    font-size: 16px;
    border: none;
-   background-color: #e6eaf3;
+   background-color: rgba(227, 202, 202, 0.3);
    border-radius: .7rem;
    outline: none;
 }
@@ -88,8 +88,8 @@
    text-decoration: none;
    display: inline-block;
    width: auto;
-   height: 25px;
-   line-height: 25px;
+   height: 26px;
+   line-height: 26px;
    border-radius: 25px;
    margin: 6px 30px;
    border: none;
@@ -103,7 +103,7 @@
    background: whitesmoke;
    box-shadow: 15px 15px 15px rgba(0, 0, 0, .1);
    transition: .3s;
-   padding: 0 20px;  
+   padding: 0 8px;  
  }
  .auth_tiny_button:hover {
    background: #F08080;

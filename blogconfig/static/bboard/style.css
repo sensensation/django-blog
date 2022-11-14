@@ -5,18 +5,13 @@
    text-align: center;
    font-family: 'Montserrat', sans-serif;
 }
-
-.redact_button{
-   color: black; 
-   font-size: 14pt;
-}
 nav {
    font-size: 16pt;
    width: 275px;
    float: left;
 }
 nav a {
-   display: block;
+   display: flexbox;
    margin: 10px 0px;
 }
 section {
@@ -58,6 +53,7 @@ h2.title {
    transition: .2s;
    border-color: whitesmoke;
 }
+/* post block */
 .create_post_box{
    position: relative;
    left: -10%;
@@ -76,16 +72,6 @@ h2.title {
    font-family: 'Montserrat', sans-serif;
    font-size: 14px;
 }
-html {
-   background-image: url("bg4.jpg");
-   background-repeat: no-repeat;
-   background-position: center center;
-   background-attachment: fixed;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
- }
 .post_block {
    font-family: 'Montserrat', sans-serif;
    font-size: 16px;
@@ -109,6 +95,21 @@ html {
    flex-direction: column;
    text-align: justify;
 }
+/* post block */
+
+/* background */
+html {
+   background-image: url("bg4.jpg");
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-attachment: fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+ /* background */
+
 .picture {
    display: block;
    margin-left: auto;
