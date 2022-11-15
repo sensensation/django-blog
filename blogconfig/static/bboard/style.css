@@ -1,22 +1,10 @@
-.head_title{
-   font-size: 40pt;
-   color: black;
-   text-transform: uppercase;
-   text-align: center;
-   font-family: 'Montserrat', sans-serif;
+
+.help_message {
+   font-family: Montserrat, sans-serif;
+   font-size: 12pt;  
+   color: gray; 
 }
-nav {
-   font-size: 16pt;
-   width: 275px;
-   float: left;
-}
-nav a {
-   display: flexbox;
-   margin: 10px 0px;
-}
-section {
-   margin-left: 170px;
-}
+
 h2.title {
    font-size: 20pt;
    text-align: center;
@@ -39,7 +27,8 @@ h2.title {
    width: 240px;
    height: 45px;
    line-height: 45px;
-   border-radius: 45px;
+   border-radius: 1px;
+   opacity: 50%;
    margin: 10px 30px;
    font-family: 'Montserrat', sans-serif;
    font-size: 14px;
@@ -121,32 +110,7 @@ html {
    border-radius: 8px;
 }
 /* buttons */
-.floating-button {
-   text-decoration: none;
-   display: inline-block;
-   width: 240px;
-   height: 45px;
-   line-height: 45px;
-   border-radius: 45px;
-   margin: 10px 30px;
-   font-family: 'Montserrat', sans-serif;
-   font-size: 14px;
-   text-transform: uppercase;
-   text-align: center;
-   letter-spacing: 3px;
-   font-weight: 600;
-   color: #524f4e;
-   background: white;
-   box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
-   transition: .2s;
-   border-color: whitesmoke;
- }
- .floating-button:hover {
-   background: #F08080;
-   box-shadow: 0 15px 20px rgba(50, 59, 55, 0.4);
-   color: white;
-   transform: translateY(-7px);
- }
+
  .post_button {
    text-decoration: none;
    display: inline-block;
@@ -174,8 +138,167 @@ html {
    color: white;
    transform: translateY(-2px);
  }
- .button_wrapper {
-   position: fixed;
-   left: 5%;
-   top: 0;
+
+
+
+
+
+
+
+#wrapper {
+	max-width: 960px;
+	margin: auto;
+}
+header {
+	padding: 20px 0;
+}
+nav a {
+	text-decoration: none;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	list-style-position: inside;
+	font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
+	padding: 10px;
+}
+
+.top-menu li {
+	display: inline-block;
+	padding: 10px 1px;
+	margin-left: 1px;
+}
+.top-menu a {
+	color: #b2b2b2;
+}
+.button {
+   text-decoration: none;
+   display: inline-block;
+   width: auto;
+   padding: 12px;
+   height: auto;
+   border-radius: 1px;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
+   text-transform: uppercase;
+   text-align: center;
+   letter-spacing: 3px;
+   font-weight: 500;
+   color: #524f4e;
+   background: white;
+   box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+   transition: .2s;
+   border-color: whitesmoke;
  }
+ .button:hover {
+   background: #F08080;
+   box-shadow: 0 15px 20px rgba(50, 59, 55, 0.4);
+   color: white;
+   transform: translateY(-7px);
+ }
+ .rubrics_button {
+   text-decoration: none;
+   display: inline-block;
+   width: 110px;
+   padding: 10px;
+   height: 27px;
+   line-height: 27px;
+   border-radius: 1px;
+   margin: 5px 0px;
+   border-color: white;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 11px;
+   text-transform: uppercase;
+   text-align: center;
+   letter-spacing: 1px;
+   font-weight: 400;
+   color: #524f4e;
+   background: whitesmoke;
+   box-shadow: 15px 15px 15px rgba(0, 0, 0, .1);
+   transition: .3s;
+   padding: 0 10px;
+ }
+ .rubrics_button:hover {
+   background: #F08080;
+   box-shadow: 0 15px 20px rgba(50, 59, 55, 0.4);
+   color: white;
+   transform: translateY(-2px);
+ }
+ #heading {
+	background: transparent url(/media/tittle_logo.png);
+	margin: 15px 0;
+	padding-left: 2px;
+}
+
+h1 {
+	display: inline-block;
+	color: #7e7e7e;
+	font: 40px/40px 'Montserrat', sans-serif;
+	background: url(/media/tittle_logo.png);
+	margin: 0;
+	padding: 0 0px;
+}
+aside {
+	float: left;
+	width: 250px;
+}
+section {
+	margin-left: 280px;
+	padding-bottom: 50px;
+}
+.aside-menu li {
+	font-weight: 300;
+	list-style-type: square;
+	border-top: 1px solid #e7e7e7;
+}
+.aside-menu {
+   position: fixed;
+}
+.aside-menu li:first-child {
+	border: none;
+}
+
+.aside-menu li.active {
+	color: #29c5e6;
+}
+
+.aside-menu a {
+	color: #8f8f8f;
+}
+.aside-menu-tittle {
+   font-size: 14pt;
+   text-align: left;
+   font-family: 'Montserrat', sans-serif;
+   color: gray;
+
+}
+/* мб пригодится? */
+blockquote {
+	margin: 0;
+	background: #F08080;
+	padding: 10px 20px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+}
+
+blockquote p {
+	color: #cecccc;
+	font-style: italic;
+	font-size: 33px;
+	margin: 0;
+}
+
+blockquote cite {
+	display: block;
+	font-size: 20px;
+	font-style: normal;
+	color: #929292;
+	margin: 0;
+	text-align: right;
+}
+/* мб пригодится? */

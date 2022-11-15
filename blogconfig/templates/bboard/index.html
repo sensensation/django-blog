@@ -9,7 +9,7 @@
    {% if bb.image %} 
    <img src="{{ bb.image.url }}"  class="picture"> 
    {% endif %} 
-   <p style="text-align:center; font-size: 14px; font-family: Montserrat, sans-serif; color: gray"> {{ bb.published|date:"d.m.Y" }}
+   <p style="text-align:center;" class="help_message"> {{ bb.published|date:"d.m.Y" }}
    <div style="float: left;  margin: -44px 75px;">
       <form method="POST" action="{% url 'post_delete' bb.id %}">
          {% csrf_token %}
@@ -22,16 +22,3 @@
 </div>
 {% endfor %}
 {% endblock %}
-
-<!-- <a href="{% url 'post_edit' bb.id %}" class="delete_button">Редактировать</a> -->
-<!-- <a href="{% url 'by_rubric' bb.rubric.pk %}"> # {{ bb.rubric.name }} </a> -->
-
-<!-- <form method="POST" action="{% url 'post_edit' bb.id %}">
-   {% csrf_token %}
-   <button type="submit" class="post_button">Редактировать</button>
-</form> -->
-
-<!-- <form method="POST" action="{% url 'post_delete' bb.id %}">
-   {% csrf_token %}
-   <button type="submit" class="post_button">Удалить запись</button>
-</form>  -->

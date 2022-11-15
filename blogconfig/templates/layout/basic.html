@@ -9,43 +9,43 @@
       <link rel="stylesheet" type="text/css"
       href="{% static 'bboard/style.css' %}">
    </head>
-   <body>
-      <header>
-         <h1 class="head_title" style="text-align:center;">Блог одиночества</h1>
+   <div id="wrapper">
+		<header>
+         <a href="{% url 'index' %}"><img src="/media/logo.png" alt="none"></a>
       </header>
-      <nav style="position: relative;">
-         {% if user.is_authenticated %}
-         <p style="font-size: 12pt;  color: gray; margin-left: 56px;font-family: Montserrat, sans-serif">
-            Добро пожаловать, {{ user.username }}!</p>
-         <div>
-            <div>
-               <a href="{% url 'logout' %}" class="floating-button">Выйти</a>
-               {% else %}
-               <p style="font-size: 12pt;  color: gray; margin-left: 56px;font-family: Montserrat, sans-serif">
-               Вы не авторизованы.</p> 
-               <p><a href="{% url 'login' %}" class="floating-button">Авторизоваться</a></p>
-               {% endif %}
-            </div>
-         </div>
-         <div class="button_wrapper">
-               <a href="{% url 'index' %}" class="floating-button">Главная</a>
-               <a href="{% url 'index' %}" class="floating-button">Личный кабинет</a>
-         </div>
-         <div>
-            <div>
-               <h2 class="title">Рубрики</h2>
-               {% for rubric in rubrics %}
-               <a href="{% url 'by_rubric' rubric.pk %}" class="floating-button">
-               #{{ rubric.name }}</a>
-               <br>
-               {% endfor %}
-               <a href="{% url 'add' %}" class="floating-button">Добавить пост</a>
-            </div>
-         </div>
+		<nav>
+         <ul class="top-menu">
+            <li><a class="button" href="{% url 'index' %}">Главная</a></li>
+            <li><a class="button" href="{% url 'index' %}">О проекте</a></li>
+            {% if user.is_authenticated %}
+            <li><a class="button" href="/partners/">Добавить пост</a></li>
+            <li><a class="button" href="/services/">Личный кабинет</a></li>
+            <li><a class="button" href="{% url 'logout' %}">Выйти</a></li>
+            <li class="help_message">Добро пожаловать, {{ user.username }}!</li>
+            {% else %}
+            <li><a class="button" href="{% url 'login' %}">Авторизоваться</a></li>
+            <li class="help_message" style="position: relative; left:30%;">Вы не авторизованы.</li>
+            {% endif %}   
+         </ul>
       </nav>
-      <section>
+		<div id="heading">
+         <h1></h1>
+      </div>
+		<aside class="aside-menu">
+         <h3 class="aside-menu-tittle">Рубрики</h3>
+         {% for rubric in rubrics %}
+         <li><a class="rubrics_button" href="{% url 'by_rubric' rubric.pk %}">#{{ rubric.name }}</a></li>
+         {% endfor %}
+         <h3 class="aside-menu-tittle">Поддержать проект</h3>
+         <p><img src="/media/donate.png" width="150" height="150" alt="None"></p>
+      </aside>
+		<section>
          {% block content %}
          {% endblock %}
       </section>
-   </body>
+	</div>
+	<footer>
+
+   </footer>
 </html>
+

@@ -13,7 +13,7 @@
    {% if bb.image %} 
    <img src="{{ bb.image.url }}"  class="picture"> 
    {% endif %} 
-   <p style="text-align:center; font-size: 14px; font-family: Montserrat, sans-serif; color: gray"> 
+   <p style="text-align:center;" class="help_message"> 
       {{ bb.published|date:"d.m.Y" }}
       <div style="float: left;  margin: -44px 75px;">
          <a href="{% url 'post_delete' bb.id %}" class="post_button">Удалить запись</a>
@@ -24,6 +24,6 @@
       </div>
    </div>
 {% empty %}
-<p style="position: relative; left: 31%; font-family: Montserrat, sans-serif; color: gray; margin-top: 100px;">Постов в этой рубрике нет.</p>
+<p class="help_message" style="position: relative; left: 31%; margin-top: 100px;">Постов в этой рубрике нет.</p>
 {% endfor %}
 {% endblock %}
