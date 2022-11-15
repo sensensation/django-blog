@@ -50,8 +50,19 @@
    border-radius: .7rem;
    outline: none;
 }
-.auth_input:-webkit-autofill {
-   transition: all 5000s ease-in-out;
+
+input:-webkit-autofill {
+  border: none;
+  -webkit-text-fill-color: rgba(185, 77, 77, 0.673);
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 150, 150, 0) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  height: 2rem;
+  padding: 0 .5rem;
+  font-size: 16px;
+  border: none;
+  background-color: rgba(227, 202, 202, 0.3);
+  border-radius: .7rem;
+  outline: none;
 }
 /* auth box */
 

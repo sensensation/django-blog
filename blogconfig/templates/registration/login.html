@@ -1,4 +1,4 @@
-{% extends "layout/logbase.html" %} 
+{% extends 'layout/logbase.html' %} 
 {% load static %}
 
 {% block css %}
@@ -18,10 +18,10 @@
             </form>
             <div class="account">
               <div style="float: left; margin: -2px 80px;">
-                Новый пользователь?<a class="auth_tiny_button" href="{% url 'signup' %}">Регистрация</a>
+                Новый пользователь? <a class="auth_tiny_button" href="{% url 'signup' %}">Регистрация</a>
               </div>
             </div>
         </div>
     </div>
-{% endblock  %}
+{% endblock content %}
   

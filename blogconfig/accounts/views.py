@@ -26,7 +26,7 @@ class Auth():
     @staticmethod
     def login_user(request):
         if request.user.is_authenticated == True:
-            return redirect('chats_list')
+            return redirect('index')
 
         if request.method == 'POST':
             username = request.POST['username']
@@ -49,5 +49,5 @@ class Auth():
     def logout_user(request):
         if request.user.is_authenticated:
             logout(request)
-            return redirect('index')
+            return redirect('login')
         return redirect('index')

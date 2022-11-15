@@ -21,5 +21,5 @@ class UserLoginForm(forms.ModelForm):
         help_texts = {'username': None}
         widgets = {
             'username': forms.TextInput(attrs={'class': 'auth_input'}),
-            'password': forms.PasswordInput(attrs={'class': 'auth_input'})
+            'password': forms.PasswordInput(attrs={'class': 'auth_input'}),
         }
