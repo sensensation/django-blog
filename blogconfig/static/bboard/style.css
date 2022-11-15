@@ -117,7 +117,7 @@ html {
    width: auto;
    height: 27px;
    line-height: 27px;
-   border-radius: 25px;
+   border-radius: 1px;
    margin: 6px 30px;
    border-color: white;
    font-family: 'Montserrat', sans-serif;
@@ -170,7 +170,7 @@ nav li {
 
 .top-menu li {
 	display: inline-block;
-	padding: 10px 1px;
+	padding: 10px 8px;
 	margin-left: 1px;
 }
 .top-menu a {
@@ -186,7 +186,6 @@ nav li {
    font-family: 'Montserrat', sans-serif;
    font-size: 14px;
    text-transform: uppercase;
-   text-align: center;
    letter-spacing: 3px;
    font-weight: 500;
    color: #524f4e;

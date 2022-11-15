@@ -4,27 +4,34 @@
 <html>
    <head>
       <meta charset="UTF-8">
-      <title>{% block title %} Главная {% endblock %} :
+      <title>{% block title %} Engineer`s Blog {% endblock %} :
       Лента</title>
       <link rel="stylesheet" type="text/css"
       href="{% static 'bboard/style.css' %}">
    </head>
    <div id="wrapper">
 		<header>
+         {% if user.is_authenticated %}
          <a href="{% url 'index' %}"><img src="/media/logo.png" alt="none"></a>
+         <h3 class="help_message" style="text-align: end;float: right; margin-top: 3%;">Добро пожаловать, {{ user.username }}!</h3>
+         {% else %}
+         <a href="{% url 'index' %}"><img src="/media/logo.png" alt="none"></a>
+         <h3 class="help_message" style="text-align: end;float: right; margin-top: 3%;">Вы не авторизованы.</h3>
+         {% endif %} 
       </header>
 		<nav>
          <ul class="top-menu">
             <li><a class="button" href="{% url 'index' %}">Главная</a></li>
             <li><a class="button" href="{% url 'index' %}">О проекте</a></li>
+            <li><a class="button" href="{% url 'index' %}">Контакты</a></li>
             {% if user.is_authenticated %}
-            <li><a class="button" href="/partners/">Добавить пост</a></li>
-            <li><a class="button" href="/services/">Личный кабинет</a></li>
+            <li><a class="button" href="{% url 'add' %}">Добавить пост</a></li>
+            <li><a class="button" href="{% url 'index' %}">Личный кабинет</a></li>
             <li><a class="button" href="{% url 'logout' %}">Выйти</a></li>
-            <li class="help_message">Добро пожаловать, {{ user.username }}!</li>
             {% else %}
-            <li><a class="button" href="{% url 'login' %}">Авторизоваться</a></li>
-            <li class="help_message" style="position: relative; left:30%;">Вы не авторизованы.</li>
+            <div style="text-align: end;float: right; margin-top: 0%;">
+               <li><a class="button" href="{% url 'login' %}">Авторизоваться</a></li>
+            </div>
             {% endif %}   
          </ul>
       </nav>
