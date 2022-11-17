@@ -10,10 +10,10 @@
       {% endblock %}
   </head>
   <body>
-   <header>
-      <h1 class="head_title">Блог одиночества</h1>
+   <header style="text-align:center;">
+      <a href="{% url 'index' %}"><img src="/media/logo.png" alt="none"></a>
    </header>
-    <div>
+    <div style="padding-top: 2%;">
     {% block content %}
     {% endblock content %}
     </div>
