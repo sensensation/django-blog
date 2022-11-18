@@ -2,20 +2,21 @@
    background-color: white;
    border-radius: 3px;
    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
-   margin:20px;
-   position: relative;
-   right: 5%;
-   width:690px;
+   margin:1px;
+   padding-top: 1%;
+   padding-bottom: 1%;
+
+   width:666px;
 }
 .workers_picture{
    display: flexbox;
-   margin-left: auto;
+   margin-left: 3%;
    margin-right: auto;
-   margin-bottom: 5%;
-   margin-top: 5%;
-   width: 20%;
+   margin-bottom: 1%;
+   margin-top: 1%;
+   width: 9%;
    height: auto;
-   border-radius: 500px;
+   border-radius: 50%;
 }
 .beauty_text {
    font-family: Montserrat, sans-serif;
