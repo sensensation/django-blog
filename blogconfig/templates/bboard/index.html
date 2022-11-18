@@ -5,7 +5,7 @@
 <div class="post_block">
    <h2 class="title" >{{ bb.title }}</h2>
    <p class="rubric">Тема:<a href="{% url 'by_rubric' bb.rubric.pk %}" class="post_button">  {{ bb.rubric.name }} </a></p>
-   <p>{{ bb.content }}</p>
+   <p style="text-indent: 50px;">{{ bb.content }}</p>
    {% if bb.image %} 
    <img src="{{ bb.image.url }}"  class="picture"> 
    {% endif %} 

@@ -22,7 +22,7 @@
 		<nav>
          <ul class="top-menu">
             <li><a class="button" href="{% url 'index' %}">Главная</a></li>
-            <li><a class="button" href="{% url 'index' %}">О проекте</a></li>
+            <li><a class="button" href="{% url 'about_project' %}">О проекте</a></li>
             <li><a class="button" href="{% url 'index' %}">Контакты</a></li>
             {% if user.is_authenticated %}
             <li><a class="button" href="{% url 'add' %}">Добавить пост</a></li>
@@ -41,10 +41,10 @@
 		<aside class="aside-menu">
          <h3 class="aside-menu-tittle">Рубрики</h3>
          {% for rubric in rubrics %}
-         <li><a class="rubrics_button" href="{% url 'by_rubric' rubric.pk %}">#{{ rubric.name }}</a></li>
+         <li><a class="rubrics_button" href="{% url 'by_rubric' rubric.pk %}">{{ rubric.name }}</a></li>
          {% endfor %}
          <h3 class="aside-menu-tittle">Поддержать проект</h3>
-         <p><img src="/media/donate.png" width="150" height="150" alt="None"></p>
+         <p><img src="/media/donate.png" width="120" height="120" alt="None"></p>
       </aside>
 		<section>
          {% block content %}

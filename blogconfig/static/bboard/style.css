@@ -1,3 +1,29 @@
+.about_us_block {
+   background-color: white;
+   border-radius: 3px;
+   box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+   margin:20px;
+   position: relative;
+   right: 5%;
+   width:690px;
+}
+.workers_picture{
+   display: flexbox;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 5%;
+   margin-top: 5%;
+   width: 20%;
+   height: auto;
+   border-radius: 500px;
+}
+.beauty_text {
+   font-family: Montserrat, sans-serif;
+   font-size: 14pt; 
+   text-align: justify; 
+   padding: 10px;
+   text-indent: 50px;
+}
 
 .help_message {
    font-family: Montserrat, sans-serif;
@@ -28,7 +54,7 @@ h2.title {
    height: 45px;
    line-height: 45px;
    border-radius: 1px;
-   opacity: 50%;
+   opacity: 90%;
    margin: 10px 30px;
    font-family: 'Montserrat', sans-serif;
    font-size: 14px;
@@ -64,19 +90,15 @@ h2.title {
 .post_block {
    font-family: 'Montserrat', sans-serif;
    font-size: 16px;
-   border-top-left-radius: 30px;
-   border-top-right-radius: 30px;
-   border-bottom-right-radius: 30px;
-   border-bottom-left-radius: 30px;
+   border-radius: 30px;
    background-color: white;
    border:2px solid lightgray;
    margin:20px auto;
    padding:10px;
-   width:690px;
+   width:650px;
    word-wrap: break-word;
    box-shadow: 0 15px 20px rgba(50, 59, 55, 0.4);
-   position: relative;
-   right: 5%;
+   
    
    border-width: solid;
    display: flexbox;
@@ -89,6 +111,7 @@ h2.title {
 /* background */
 html {
    background-image: url("bg4.jpg");
+   /* background-color: rgba(235, 196, 196, 0.82); */
    background-repeat: no-repeat;
    background-position: center center;
    background-attachment: fixed;
@@ -170,7 +193,7 @@ nav li {
 
 .top-menu li {
 	display: inline-block;
-	padding: 1px 1px;
+	padding: 1px 3.7px;
 	margin-left: 1px;
 }
 .top-menu a {
@@ -253,7 +276,8 @@ section {
 .aside-menu li {
 	font-weight: 300;
 	list-style-type: square;
-	border-top: 1px solid #e7e7e7;
+   color: gray;
+	border-top: 1px solid #d1cfcf;
 }
 .aside-menu {
    position: fixed;
@@ -296,7 +320,7 @@ blockquote cite {
 	display: block;
 	font-size: 20px;
 	font-style: normal;
-	color: #929292;
+	color: #494747;
 	margin: 0;
 	text-align: right;
 }
