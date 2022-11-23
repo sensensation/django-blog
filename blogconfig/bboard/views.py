@@ -27,30 +27,31 @@ class BbCreateView(LoginRequiredMixin, CreateView):
         return context
 
 
-def by_rubric(request, rubric_id):
+def by_rubric(request, rubric_id: int):
     bbs = Bb.objects.filter(rubric=rubric_id)
     rubrics = Rubric.objects.all()
     current_rubric = Rubric.objects.get(pk=rubric_id)
     context = {"bbs": bbs, "rubrics": rubrics, "current_rubric": current_rubric}
     return render(request, "bboard/by_rubric.html", context)
 
-
-def index(request):
+def show_rubrics():
     bbs = Bb.objects.all()
     rubrics = Rubric.objects.all()
     context = {"bbs": bbs, "rubrics": rubrics}
+    return context
+
+def index(request):
+    context = show_rubrics()
     return render(request, "bboard/index.html", context)
 
 def about_project(request):
-    bbs = Bb.objects.all()
-    rubrics = Rubric.objects.all()
-    context = {"bbs": bbs, "rubrics": rubrics}
+    context = show_rubrics()
     return render(request, "bboard/about_project.html",context)
 
 class Post:
     @login_required(login_url="login")
     @staticmethod
-    def post_edit(request, pk):
+    def post_edit(request, pk: int):
         post = Bb.objects.get(id=pk)
         form = BbForm(instance=post)
         if request.method == "POST":

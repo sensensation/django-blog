@@ -1,0 +1,57 @@
+python debug information
+[2022-11-23 12:28:05,744 - logname: web_logger - 30 - INFO] sperma python
+[2022-11-23 12:28:05,744 - logname: web_logger - 30 - INFO] sperma python
+[2022-11-23 12:29:31,708 - logname: web_logger - 30 - INFO] sperma python
+[2022-11-23 12:29:31,708 - logname: web_logger - 30 - INFO] sperma python
+[2022-11-23 12:29:31,709 - logname: web_logger - 35 - ERROR] exception
+Traceback (most recent call last):
+  File "c:\Users\Sensensation\Desktop\CodingSavings\Aston\#Logger stdout example.py", line 33, in <module>
+    1/0
+ZeroDivisionError: division by zero
+[2022-11-23 12:29:31,709 - logname: web_logger - 35 - ERROR] exception
+Traceback (most recent call last):
+  File "c:\Users\Sensensation\Desktop\CodingSavings\Aston\#Logger stdout example.py", line 33, in <module>
+    1/0
+ZeroDivisionError: division by zero
+[2022-11-23 12:30:17,186 - logname: web_logger - 30 - INFO] sperma python
+[2022-11-23 12:30:17,186 - logname: web_logger - 30 - INFO] sperma python
+[2022-11-23 12:30:17,187 - logname: web_logger - 35 - ERROR] exception
+Traceback (most recent call last):
+  File "c:\Users\Sensensation\Desktop\CodingSavings\Aston\#Logger stdout example.py", line 33, in <module>
+    1/0
+ZeroDivisionError: division by zero
+[2022-11-23 12:30:17,187 - logname: web_logger - 35 - ERROR] exception
+Traceback (most recent call last):
+  File "c:\Users\Sensensation\Desktop\CodingSavings\Aston\#Logger stdout example.py", line 33, in <module>
+    1/0
+ZeroDivisionError: division by zero
+[2022-11-23 12:30:49,757 - logname: web_logger - 30 - INFO] sperma python
+[2022-11-23 12:30:49,757 - logname: web_logger - 30 - INFO] sperma python
+[2022-11-23 12:30:49,758 - logname: web_logger - 35 - ERROR] exception
+Traceback (most recent call last):
+  File "c:\Users\Sensensation\Desktop\CodingSavings\Aston\#Logger stdout example.py", line 33, in <module>
+    1/0
+ZeroDivisionError: division by zero
+[2022-11-23 12:30:49,758 - logname: web_logger - 35 - ERROR] exception
+Traceback (most recent call last):
+  File "c:\Users\Sensensation\Desktop\CodingSavings\Aston\#Logger stdout example.py", line 33, in <module>
+    1/0
+ZeroDivisionError: division by zero
+[2022-11-23 12:31:42,203 - logname: web_logger - 27 - INFO] in process
+[2022-11-23 12:31:42,203 - logname: web_logger - 27 - INFO] in process
+[2022-11-23 12:31:42,204 - logname: web_logger - 36 - ERROR] exception
+Traceback (most recent call last):
+  File "c:\Users\Sensensation\Desktop\CodingSavings\Aston\#Logger stdout example.py", line 34, in <module>
+    1/0
+ZeroDivisionError: division by zero
+[2022-11-23 12:31:42,204 - logname: web_logger - 36 - ERROR] exception
+Traceback (most recent call last):
+  File "c:\Users\Sensensation\Desktop\CodingSavings\Aston\#Logger stdout example.py", line 34, in <module>
+    1/0
+ZeroDivisionError: division by zero
+[2022-11-23 12:32:02,396 - logname: web_logger - 25 - INFO] in process
+[2022-11-23 12:32:02,397 - logname: web_logger - 34 - ERROR] exception
+Traceback (most recent call last):
+  File "c:\Users\Sensensation\Desktop\CodingSavings\Aston\#Logger stdout example.py", line 32, in <module>
+    1/0
+ZeroDivisionError: division by zero
