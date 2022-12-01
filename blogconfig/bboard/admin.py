@@ -8,5 +8,5 @@ from .models import Rubric
 admin.site.register(Rubric)
 
 class BbAdmin(admin.ModelAdmin):
-   list_display = ('title', 'content', 'published', 'rubric')
+   list_display = ('title', 'content', 'published', 'rubric', 'author')
 

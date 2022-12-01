@@ -16,14 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static 
-from django.conf import settings 
+from django.conf import settings
 
+from bboard.sr_views import PostAPIView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("bboard/", include('bboard.urls')),
     path("accounts/", include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
+
+    path('api/v1/postlist/', PostAPIView.as_view()),
+    path('api/v1/postlist/<int:pk>/', PostAPIView.as_view())
 ] 
 
 if settings.DEBUG: #если что изменить здесь при деплое проекта

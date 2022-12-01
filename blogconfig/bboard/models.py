@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Bb(models.Model):
-    author = models.ForeignKey(User, null= True,on_delete=models.CASCADE, verbose_name="Автор")
+    author = models.ForeignKey(User, null= True,on_delete=models.CASCADE, verbose_name="Пользователь")
     title = models.CharField(max_length=50, verbose_name="Заголовок")
     content = models.TextField(null=True, blank=True, verbose_name="Описание")
     published = models.DateTimeField(
