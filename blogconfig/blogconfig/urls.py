@@ -27,8 +27,10 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
 
     path('api/v1/postlist/', PostAPIList.as_view()),
+    path('api/v1/drf-auth/', include('rest_framework.urls')),
     path('api/v1/postlist/<int:pk>/', PostAPIUpdate.as_view()),
-    path('api/v1/postlist/postdelete/<int:pk>/', PostAPIDestroy.as_view()),
+    path('api/v1/postdelete/<int:pk>/', PostAPIDestroy.as_view()),
+    
 ] 
 
 if settings.DEBUG: #если что изменить здесь при деплое проекта
