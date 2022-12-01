@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf.urls.static import static 
 from django.conf import settings
 
-from bboard.sr_views import PostAPIView
+from bboard.sr_views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -26,8 +26,9 @@ urlpatterns = [
     path("accounts/", include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
 
-    path('api/v1/postlist/', PostAPIView.as_view()),
-    path('api/v1/postlist/<int:pk>/', PostAPIView.as_view())
+    path('api/v1/postlist/', PostAPIList.as_view()),
+    path('api/v1/postlist/<int:pk>/', PostAPIUpdate.as_view()),
+    path('api/v1/postlist/postdelete/<int:pk>/', PostAPIDestroy.as_view()),
 ] 
 
 if settings.DEBUG: #если что изменить здесь при деплое проекта
